@@ -1,0 +1,13 @@
+<!--
+Mikael Follonier, dsknt.industry@gmail.com
+2016
+-->
+<snippet>
+  <tabTrigger>with</tabTrigger>
+  <scope>source.vhdl</scope>
+  <content>
+with ${1:signal} select ${2:signal} &lt;=
+    ${3:valuetoassign} when ${3:valuetocheck};
+  </content>
+  <description>with</description>
+</snippet>

@@ -1,0 +1,23 @@
+<!--
+Mikael Follonier, dsknt.industry@gmail.com
+2016
+-->
+<snippet>
+  <tabTrigger>entarch</tabTrigger>
+  <scope>source.vhdl</scope>
+  <content>
+entity ${1:${TM_FILENAME/(.*?)(\..+)/$1/}} is
+	port
+	(
+		${0:clock}
+	);
+end entity; --${1:${TM_FILENAME/(.*?)(\..+)/$1/}}
+
+architecture ${2:arch} of ${1:${TM_FILENAME/(.*?)(\..+)/$1/}} is
+	--declarations
+begin
+
+end architecture; -- ${2:arch}
+</content>
+  <description>entity architecture</description>
+</snippet>
