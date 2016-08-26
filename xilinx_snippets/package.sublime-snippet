@@ -1,0 +1,13 @@
+<!--
+Mikael Follonier, dsknt.industry@gmail.com
+2016
+-->
+<snippet>
+  <tabTrigger>pack</tabTrigger>
+  <scope>source.vhdl</scope>
+  <content>
+package ${1:${TM_FILENAME/(.*?)(\..+)/$1_p/}} is
+	$0
+end package ; -- ${1:${TM_FILENAME/(.*?)(\..+)/$1_p/}} </content>
+  <description>package</description>
+</snippet>

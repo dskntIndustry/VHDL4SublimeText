@@ -1,0 +1,38 @@
+<!--
+Mikael Follonier, dsknt.industry@gmail.com
+2016
+-->
+<snippet>
+  <tabTrigger>inst</tabTrigger>
+  <scope>source.vhdl</scope>
+  <content>
+
+--declaration before begin in architecture where you want to use the component
+component ${2:componentToInstanciate}
+	generic
+	(
+
+	);
+	port
+	(
+		clock : in std_ulogic;
+		reset : in std_ulogic;
+		enable : in std_ulogic
+	);
+end component; --${1:instance_name}
+
+${1:instance_name} : ${2:componentToInstanciate}
+	--generic map
+	--(
+
+	--)
+	port map
+	(
+		-- port =&gt; level_signal
+		clock =&gt; clock,
+		reset =&gt; reset,
+		enable =&gt; enable
+	);
+</content>
+  <description>declaration and instance of a component</description>
+</snippet>

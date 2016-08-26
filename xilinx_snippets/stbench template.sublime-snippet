@@ -1,0 +1,167 @@
+<!--
+Mikael Follonier, dsknt.industry@gmail.com
+2016
+-->
+<snippet>
+  <tabTrigger>stb</tabTrigger>
+  <scope>source.vhdl</scope>
+  <content>
+library ieee ;
+	use ieee.std_logic_1164.all ;
+	use ieee.numeric_std.all ;
+
+entity ${0:${TM_FILENAME/(.*?)(\..+)/$1/}} is
+	generic
+	(
+		--register_width: positive := 8;
+		--change these generics to get others basis clock frequency and reset count
+		resetcount : positive := 40;
+		clockFreq : real := 250.0E6
+	);
+	--usually there isn't io 
+	--port
+	--(
+	--);
+end entity; -- ${0:${TM_FILENAME/(.*?)(\..+)/$1/}}
+
+architecture test of ${0:${TM_FILENAME/(.*?)(\..+)/$1/}} is
+
+	signal clock : std_ulogic;
+	signal reset : std_ulogic;
+	signal enable : std_ulogic;
+
+	--declaration before begin in architecture
+	--clock/reset generator
+	component ClockGenerator
+		generic
+		(
+			resetcount : positive;
+			clockfreq  : real
+		);
+		port
+		(
+			clock : out std_ulogic;
+			reset : out std_ulogic;
+			enable : in std_ulogic
+		);
+	end component; --ClockGenerator
+
+	--dut
+	component ${1:componentToInstanciate}
+		--generic
+		--(
+		--);
+		port
+		(
+			clock : in std_ulogic;
+			reset : in std_ulogic;
+			enable : in std_ulogic
+		);
+	end component; --${1:componentToInstanciate}
+
+	--stimuli module
+	component ${2:componentToInstanciate}
+		--generic
+		--(
+		--);
+		port
+		(
+			clock : in std_ulogic;
+			reset : in std_ulogic;
+			enable : in std_ulogic
+		);
+	end component; --${2:componentToInstanciate}
+
+	--feedback module
+	--control, asserting signal
+	component ${4:componentToInstanciate}
+		--generic
+		--(
+		--);
+		port
+		(
+			clock : in std_ulogic;
+			reset : in std_ulogic;
+			enable : in std_ulogic
+		);
+	end component; --${4:componentToInstanciate}
+
+begin
+	-- example
+	--ODDR_clk : ODDR2
+	--generic map(
+	--	DDR_ALIGNMENT => "NONE",
+	--	INIT => '0', -- Initial value for Q port (’1’ or ’0’)
+	--	SRTYPE => "SYNC") -- Reset Type ("ASYNC" or "SYNC")
+	--port map (
+	--	Q => LiveClk_x2_for_IO,
+	--	C0 => LiveClk_x2,
+	--	C1 => LiveClk_x2_inv,
+	--	CE => '1',
+	--	D0 => '0',
+	--	D1 => '1',
+	--	R => '0',
+	--	S => '0'
+	--);
+
+	--clock generator component (only simulation)
+	clock_gen: ClockGenerator
+		generic map
+		(
+			resetcount =&gt; resetcount,
+			clockfreq  =&gt; clockFreq
+		)
+		port map
+		(
+			-- port =&gt; level_signal
+			clock =&gt; clock,
+			reset =&gt; reset,
+			enable =&gt; enable
+		);
+
+	--device to test
+	dut: ${1:componentToInstanciate}
+		--generic map
+		--(
+		--)
+		port map
+		(
+			-- port =&gt; level_signal
+			clock =&gt; clock,
+			reset =&gt; reset,
+			enable =&gt; enable
+		);
+
+	--signal generator or stimuli generator
+	${3:instance_name}: ${2:componentToInstanciate}
+		--generic map
+		--(
+		--)
+		port map
+		(
+			-- port =&gt; level_signal
+			clock =&gt; clock,
+			reset =&gt; reset,
+			enable =&gt; enable
+		);
+
+	--signal feedback
+	${5:instance_name}: ${4:componentToInstanciate}
+		--generic map
+		--(
+		--)
+		port map
+		(
+			-- port =&gt; level_signal
+			clock =&gt; clock,
+			reset =&gt; reset,
+			enable =&gt; enable
+		);
+
+	--concurrent assignments
+	enable &lt;= '1';
+
+end architecture; --test
+</content>
+  <description>unit test for a synchronous module</description>
+</snippet>

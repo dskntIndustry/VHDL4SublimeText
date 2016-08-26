@@ -1,0 +1,32 @@
+<!--
+Mikael Follonier, dsknt.industry@gmail.com
+2016
+-->
+<snippet>
+  <tabTrigger>vhdl</tabTrigger>
+  <scope>source.vhdl</scope>
+  <content>
+library ieee ;
+	use ieee.std_logic_1164.all ;
+	use ieee.numeric_std.all ;
+
+entity ${0:${TM_FILENAME/(.*?)(\..+)/$1/}} is	
+	-- generic parameters of the module
+	--generic
+	--(
+	--);
+	port
+	(
+		${1:clock} : in std_ulogic;
+		${2:reset} : in std_ulogic
+	);
+end entity; -- ${0:${TM_FILENAME/(.*?)(\..+)/$1/}}
+
+architecture ${3:arch} of ${0:${TM_FILENAME/(.*?)(\..+)/$1/}} is
+
+begin
+
+end architecture; -- ${3:arch}
+</content>
+  <description>vhdl template</description>
+</snippet>

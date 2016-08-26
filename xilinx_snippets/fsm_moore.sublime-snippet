@@ -1,0 +1,54 @@
+<!--
+Mikael Follonier, dsknt.industry@gmail.com
+2016
+-->
+<snippet>
+  <tabTrigger>fsm_moore</tabTrigger>
+  <scope>source.vhdl</scope>
+  <content>
+-- This goes in architecture declaration part!!!!!
+-- Type of state machine.
+-- Current and next state declaration.
+type fsm_state_type is (${1:init_state}, ${2:state1}, ${3:state2}, ${4:state3});  
+signal current_state, next_state: fsm_state_type;  
+
+-- begin
+sync_state_changer_${5:identifier}:process(clock, reset)
+begin
+	if reset='1' then
+		--default state on reset.
+		current_state &lt;= ${1:init_state};  
+	elsif rising_edge(clock) then
+		--state change.
+		current_state &lt;= next_state;   
+	end if;
+end process sync_state_changer_${5:identifier};
+
+-- processing states part
+-- proc_id:process(current_state, in1, in2)
+proc_${6:id}:process(current_state, all)
+begin
+	-- next_state &lg;= current_state; 
+	case current_state is
+		when ${1:init_state} =&gt; 
+			-- statements
+			next_state &lt;= ${2:state1};
+
+		when ${2:state1} =&gt; 
+			-- statements
+			next_state &lt;= ${3:state2};
+
+		when ${3:state2} =&gt; 
+			-- statements
+			next_state &lt;= ${4:state3};
+
+		when ${4:state3} =&gt; 
+			-- statements
+			next_state &lt;= ${1:init_state};
+
+		when others =&gt; report "Unreachable state" severity failure;
+	end case;
+end process proc_${6:id}; --proc_${6:id}
+</content>
+  <description>fsm</description>
+</snippet>
