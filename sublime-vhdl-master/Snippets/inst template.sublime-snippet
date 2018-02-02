@@ -7,7 +7,7 @@ Mikael Follonier, dsknt.industry@gmail.com
   <scope>source.vhdl</scope>
   <content>
 
---declaration before begin in architecture
+--declaration before begin in architecture where you want to use the component
 component ${2:componentToInstanciate}
 	generic
 	(
@@ -28,7 +28,7 @@ ${1:instance_name} : ${2:componentToInstanciate}
 	--)
 	port map
 	(
-		-- port => level_signal
+		-- port =&gt; level_signal
 		clock =&gt; clock,
 		reset =&gt; reset,
 		enable =&gt; enable

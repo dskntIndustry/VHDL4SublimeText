@@ -6,11 +6,9 @@ Mikael Follonier, dsknt.industry@gmail.com
   <tabTrigger>spro</tabTrigger>
   <scope>source.vhdl</scope>
   <content>
-${1:identifier}:process(clock, reset)
+${1:identifier}:process(clock)
 begin
-	if reset = '1' then
-			
-	elsif rising_edge(${2:clock}) then
+	if rising_edge(${2:clock}) then
 		$0
 	end if;
 end process ${1:identifier}; -- ${1:identifier}

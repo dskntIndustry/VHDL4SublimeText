@@ -1,3 +1,7 @@
+<!--
+Mikael Follonier, dsknt.industry@gmail.com
+2016
+-->
 <snippet>
   <tabTrigger>pro</tabTrigger>
   <scope>source.vhdl</scope>
