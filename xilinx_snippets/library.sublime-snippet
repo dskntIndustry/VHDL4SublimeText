@@ -1,0 +1,15 @@
+<!--
+Mikael Follonier, dsknt.industry@gmail.com
+2016
+-->
+<snippet>
+  <tabTrigger>lib</tabTrigger>
+  <scope>source.vhdl</scope>
+  <content>
+library ieee;
+	use ieee.std_logic_1164.all;
+	--use ieee.numeric_std.all;
+	use ieee.std_logic_arith.all;
+	use ieee.std_logic_unsigned.all;</content>
+  <description>Library includes</description>
+</snippet>

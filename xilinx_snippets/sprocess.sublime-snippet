@@ -6,7 +6,6 @@ Mikael Follonier, dsknt.industry@gmail.com
   <tabTrigger>spro</tabTrigger>
   <scope>source.vhdl</scope>
   <content>
---Assume all signals have a defined value at device reset (xilinx style)
 ${1:identifier}:process(clock)
 begin
 	if rising_edge(${2:clock}) then
