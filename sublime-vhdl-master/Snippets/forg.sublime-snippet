@@ -3,11 +3,11 @@ Mikael Follonier, dsknt.industry@gmail.com
 2016
 -->
 <snippet>
-  <tabTrigger>forg</tabTrigger>
-  <scope>source.vhdl</scope>
-  <content>
-  	${1:identifier} : for ${2:i} in ${3:val1} to ${4:val2} generate
+<tabTrigger>forg</tabTrigger>
+<scope>source.vhdl</scope>
+<content>
+	${1:identifier} : for ${2:i} in ${3:val1} to ${4:val2} generate
 		$0
 	end generate; -- ${1:identifier}</content>
-  <description>for generate</description>
+<description>for generate</description>
 </snippet>
