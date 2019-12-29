@@ -3,12 +3,12 @@ Mikael Follonier, dsknt.industry@gmail.com
 2016
 -->
 <snippet>
-  <tabTrigger>while</tabTrigger>
-  <scope>source.vhdl</scope>
-  <content>
-${1:identifier} : while ${2:expression} loop
+<tabTrigger>while</tabTrigger>
+<scope>source.vhdl</scope>
+<content>
+${1:identifier}: while ${2:expression} loop
 	$0
-end loop; -- ${1:identifier}
-  </content>
-  <description>while</description>
+end loop; --${1:identifier}
+</content>
+<description>while</description>
 </snippet>

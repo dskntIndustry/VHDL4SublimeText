@@ -1,10 +1,10 @@
 <snippet>
-  <tabTrigger>else</tabTrigger>
-  <scope>source.vhdl</scope>
-  <content>
+<tabTrigger>else</tabTrigger>
+<scope>source.vhdl</scope>
+<content>
 else
-	$0
+$0
 end if;
-  </content>
-  <description>else</description>
+</content>
+<description>else</description>
 </snippet>

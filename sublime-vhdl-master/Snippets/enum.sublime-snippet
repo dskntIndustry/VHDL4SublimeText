@@ -1,0 +1,12 @@
+<!--
+Mikael Follonier, dsknt.industry@gmail.com
+2016
+-->
+<snippet>
+<tabTrigger>enum</tabTrigger>
+<scope>source.vhdl</scope>
+<content>
+type ${1:type_name} is (${2:Enum_member1}, ${3:Enum_member2}, ${4:Enum_member3});
+</content>
+<description>enum</description>
+</snippet>

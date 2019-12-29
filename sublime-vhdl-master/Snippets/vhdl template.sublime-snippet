@@ -3,30 +3,31 @@ Mikael Follonier, dsknt.industry@gmail.com
 2016
 -->
 <snippet>
-  <tabTrigger>vhdl</tabTrigger>
-  <scope>source.vhdl</scope>
-  <content>
-library ieee ;
-	use ieee.std_logic_1164.all ;
-	use ieee.numeric_std.all ;
+<tabTrigger>vhdl</tabTrigger>
+<scope>source.vhdl</scope>
+<content>
+library IEEE;
+	use IEEE.std_logic_1164.all;
+	use IEEE.std_logic_arith.all;
+	use IEEE.std_logic_unsigned.all;
 
-entity ${0:${TM_FILENAME/(.*?)(\..+)/$1/}} is	
+entity ${0:${TM_FILENAME/(.*?)(\..+)/$1/}} is
 	-- generic parameters of the module
 	--generic
 	--(
 	--);
 	port
 	(
-		${1:clock} : in std_ulogic;
-		${2:reset} : in std_ulogic
+		${1:clock} : in std_logic;
+		${2:reset} : in std_logic
 	);
-end entity; -- ${0:${TM_FILENAME/(.*?)(\..+)/$1/}}
+end entity; --${0:${TM_FILENAME/(.*?)(\..+)/$1/}}
 
 architecture ${3:arch} of ${0:${TM_FILENAME/(.*?)(\..+)/$1/}} is
 
 begin
 
-end architecture; -- ${3:arch}
+end architecture; --${3:arch}
 </content>
-  <description>vhdl template</description>
+<description>vhdl template</description>
 </snippet>

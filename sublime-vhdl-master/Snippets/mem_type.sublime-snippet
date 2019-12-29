@@ -1,0 +1,13 @@
+<!--
+Mikael Follonier, dsknt.industry@gmail.com
+2016
+-->
+<snippet>
+<tabTrigger>mem</tabTrigger>
+<scope>source.vhdl</scope>
+<content>
+type ${1:type_name} is array(natural range &lt;&gt;) of std_logic_vector(${2:Bound1} downto ${3:Bound2});
+signal ${4:signal_name}: ${1:type_name}(0 to ${5:Bound3}) := (others =&gt; (others =&gt; '0'));
+</content>
+<description>create a memory type and a corresponding signal</description>
+</snippet>

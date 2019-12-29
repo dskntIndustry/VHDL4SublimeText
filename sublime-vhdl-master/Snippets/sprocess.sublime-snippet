@@ -3,15 +3,15 @@ Mikael Follonier, dsknt.industry@gmail.com
 2016
 -->
 <snippet>
-  <tabTrigger>spro</tabTrigger>
-  <scope>source.vhdl</scope>
-  <content>
-${1:identifier}:process(clock)
+<tabTrigger>spro</tabTrigger>
+<scope>source.vhdl</scope>
+<content>
+${1:identifier}: process(clock)
 begin
 	if rising_edge(${2:clock}) then
 		$0
 	end if;
-end process ${1:identifier}; -- ${1:identifier}
+end process ${1:identifier}; --${1:identifier}
 </content>
-  <description>Synchronous process</description>
+<description>Synchronous process</description>
 </snippet>

@@ -3,12 +3,12 @@ Mikael Follonier, dsknt.industry@gmail.com
 2016
 -->
 <snippet>
-  <tabTrigger>if</tabTrigger>
-  <scope>source.vhdl</scope>
-  <content>
+<tabTrigger>if</tabTrigger>
+<scope>source.vhdl</scope>
+<content>
 if ${1:expression} then
 	$0
 end if;
 </content>
-  <description>if</description>
+<description>if</description>
 </snippet>

@@ -1,0 +1,12 @@
+<!--
+Mikael Follonier, dsknt.industry@gmail.com
+2016
+-->
+<snippet>
+<tabTrigger>type</tabTrigger>
+<scope>source.vhdl</scope>
+<content>
+type ${1:type_name} is array(natural range &lt;&gt;) of std_logic_vector(${2:Bound1} downto ${3:Bound2});
+</content>
+<description>create a custom type</description>
+</snippet>

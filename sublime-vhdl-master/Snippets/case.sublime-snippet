@@ -3,9 +3,9 @@ Mikael Follonier, dsknt.industry@gmail.com
 2016
 -->
 <snippet>
-  <tabTrigger>case</tabTrigger>
-  <scope>source.vhdl</scope>
-  <content>
+<tabTrigger>case</tabTrigger>
+<scope>source.vhdl</scope>
+<content>
 case(${1:signal_name}) is
 	when ${2:IDLE} =&gt;
 		$0
@@ -14,5 +14,5 @@ case(${1:signal_name}) is
 
 end case;
 </content>
-  <description>case</description>
+<description>case</description>
 </snippet>

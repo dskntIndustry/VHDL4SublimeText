@@ -3,11 +3,22 @@ Mikael Follonier, dsknt.industry@gmail.com
 2016
 -->
 <snippet>
-  <tabTrigger>pack</tabTrigger>
-  <scope>source.vhdl</scope>
-  <content>
-package ${1:${TM_FILENAME/(.*?)(\..+)/$1_p/}} is
-	$0
-end package; -- ${1:${TM_FILENAME/(.*?)(\..+)/$1_p/}} </content>
-  <description>package</description>
+<tabTrigger>pack</tabTrigger>
+<scope>source.vhdl</scope>
+<content>
+library IEEE;
+	use IEEE.std_logic_1164.all;
+	use IEEE.std_logic_arith.all;
+	use IEEE.std_logic_unsigned.all;
+
+
+package ${1:${TM_FILENAME/(.*?)(\..+)/$1/}} is
+
+end package ${1:${TM_FILENAME/(.*?)(\..+)/$1/}}; --${1:${TM_FILENAME/(.*?)(\..+)/$1/}}
+
+package body ${1:${TM_FILENAME/(.*?)(\..+)/$1/}} is
+
+end package body ${1:${TM_FILENAME/(.*?)(\..+)/$1/}}; --${1:${TM_FILENAME/(.*?)(\..+)/$1/}}
+</content>
+<description>package</description>
 </snippet>
