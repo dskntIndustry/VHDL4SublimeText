@@ -18,8 +18,8 @@ architecture rtl of ${1:${TM_FILENAME/(.*?)(\..+)/$1/}} is
 	-- Reset vector
 	constant RESET_VECTOR : TR_${2:type_name} :=
 	(
-		${3:sig1}		:= '0';
-		${4:sig2}		:= '0';
+		${3:sig1}		=> '0',
+		${4:sig2}		=> '0'
 	);
 
 	signal r, rin : TR_${2:type_name} := RESET_VECTOR;
