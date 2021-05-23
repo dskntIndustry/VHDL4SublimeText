@@ -1,0 +1,67 @@
+<!--
+Mikael Follonier, dsknt.industry@gmail.com
+2021
+-->
+<snippet>
+<tabTrigger>archgaisler</tabTrigger>
+<scope>source.vhdl</scope>
+<content>
+architecure rtl of ${1:${TM_FILENAME/(.*?)(\..+)/$1/}} is
+
+	-- Record for internal values
+	type TR_${2:type_name} is record
+	-- your register elements go here, like:
+		${3:sig1}		: std_logic;
+		${4:sig2}		: std_logic;
+	end record;
+
+	-- Reset vector
+	constant RESET_VECTOR : TR_${2:type_name} :=
+	(
+		${3:sig1}		:= '0';
+		${4:sig2}		:= '0';
+	);
+
+	signal r, rin : TR_${2:type_name} := RESET_VECTOR;
+
+begin
+
+	CombinatorialProcess: process(r, entity_input_ports)
+		variable v : TR_${2:type_name};
+	begin
+		-- Grab data from the register output
+		v := r;
+
+		-- Logic goes here
+
+
+		-- Assign output ports
+		entity_output_ports &lt;= r.outp;
+
+		-- Assign assign computed value to output register
+		rin &lt;= v;
+	end process CombinatorialProcess;
+
+	SequentialProcess: process(clock, areset, sreset)
+	begin
+		-- Asynchronous reset
+		if areset = '1' then
+			r &lt;= RESET_VECTOR;
+		elsif rising_edge(clock) then
+
+			-- Synchronous reset
+			if sreset = '1' then
+				r &lt;= RESET_VECTOR;
+			-- Register values
+			else
+				r &lt;= rin;
+			end if;
+
+		end if;
+	end process SequentialProcess;
+
+end architecture rtl; --${1:${TM_FILENAME/(.*?)(\..+)/$1/}}
+
+</content>
+<description>Gaisler two process architecture template</description>
+</snippet>

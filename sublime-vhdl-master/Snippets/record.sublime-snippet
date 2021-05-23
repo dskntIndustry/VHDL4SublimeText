@@ -1,0 +1,16 @@
+<!--
+Mikael Follonier, dsknt.industry@gmail.com
+2021
+-->
+<snippet>
+<tabTrigger>rec</tabTrigger>
+<scope>source.vhdl</scope>
+<content>
+type TR_${1:type_name} is record
+	${2:sig1}		: std_logic;
+	${3:sig2}		: std_logic;
+end record;
+
+</content>
+<description>create a custom record type</description>
+</snippet>
