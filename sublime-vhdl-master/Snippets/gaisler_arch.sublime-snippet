@@ -6,7 +6,7 @@ Mikael Follonier, dsknt.industry@gmail.com
 <tabTrigger>archgaisler</tabTrigger>
 <scope>source.vhdl</scope>
 <content>
-architecure rtl of ${1:${TM_FILENAME/(.*?)(\..+)/$1/}} is
+architecture rtl of ${1:${TM_FILENAME/(.*?)(\..+)/$1/}} is
 
 	-- Record for internal values
 	type TR_${2:type_name} is record
