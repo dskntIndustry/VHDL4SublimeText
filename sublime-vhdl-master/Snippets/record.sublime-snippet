@@ -11,6 +11,13 @@ type TR_${1:type_name} is record
 	${3:sig2}		: std_logic;
 end record;
 
+---- Reset vector
+--constant RESET_VECTOR : TR_${1:type_name} :=
+--(
+--	${2:sig1}		=> '0',
+--	${3:sig2}		=> '0'
+--);
+
 </content>
 <description>create a custom record type</description>
 </snippet>

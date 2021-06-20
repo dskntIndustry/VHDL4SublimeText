@@ -15,6 +15,6 @@ entity ${1:${TM_FILENAME/(.*?)(\..+)/$1/}} is
 	(
 		${0:clock}
 	);
-end entity; -- ${1:${TM_FILENAME/(.*?)(\..+)/$1/}}</content>
+end entity; --${1:${TM_FILENAME/(.*?)(\..+)/$1/}}</content>
   <description>entity</description>
 </snippet>

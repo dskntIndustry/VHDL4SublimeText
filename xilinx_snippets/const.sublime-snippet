@@ -2,7 +2,7 @@
   <tabTrigger>const</tabTrigger>
   <scope>source.vhdl</scope>
   <content>
-constant ${1:signal} : ${2:type}:=${3:constantToAssign};
+constant ${1:signal}: ${2:type}:=${3:constantToAssign};
   </content>
   <description>const</description>
 </snippet>

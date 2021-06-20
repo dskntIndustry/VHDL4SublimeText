@@ -8,7 +8,7 @@ Mikael Follonier, dsknt.industry@gmail.com
 <content>
 ${1:identifier}: for ${2:iterator} in ${3:val1} to ${4:val2} loop
 	$0
-end loop; -- ${1:identifier}
+end loop; --${1:identifier}
 </content>
 <description>for loop</description>
 </snippet>
